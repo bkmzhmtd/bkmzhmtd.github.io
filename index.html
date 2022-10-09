@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thermocouple.js Conversion Demo</title>
+    <link rel="manifest" href="/manifest.json">
+    <title>Thermocouple Calcculator</title>
     <style>
     </style>
 </head>
 <body>
+    <script src="js/main.js"></script>
     <h2>Thermocouple Converter</h2>
-
     <form>
-    
         <p>Select thermocouple type:</p>
         <div>
             <input type="radio" id="typeb" name="type" value="b">
@@ -32,7 +32,6 @@
             <input type="radio" id="typet" name="type" value="t">
             <label for="typet">T</label>
         </div>
-
         <p>Select conversion:</p>
         <div>
             <input type="radio" id="mv" name="units" value="mv" checked>
@@ -40,37 +39,28 @@
             <input type="radio" id="degc" name="units" value="degc">
             <label for="degc">&deg;C to mV</label>
         </div>
-
         <p>Input value:</p>
         <div>
             <input type="number" id="value" type="text" name="value" placeholder="Value to be converted">
         </div>
-
     </form>
-
     <p>Conversion Result:</p>
     <h3 id="result"></h3>
-
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript">
-
         var result = document.querySelector('#result');
-
         onload = function(e) {
             convert();
             e.preventDefault();
         };
-
         oninput = function (e) {
             convert();
             e.preventDefault();
         };
-
         onsubmit = function (e) {
             convert();
             e.preventDefault();
         };
-
         function convert() {
             try {
                 var input_type = document.querySelector("input[name=type]:checked").value;
@@ -92,7 +82,6 @@
                 result.innerHTML = err.message;
             }
         }
-
     </script>
 </body>
 </html>
